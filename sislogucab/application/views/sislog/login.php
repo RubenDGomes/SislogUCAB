@@ -3,7 +3,7 @@
     <div class="col-md-4 offset-md-4" style=" border: 5px 5px 5px 5px; ">
         <h1 class="text-center"><?php echo $title ?></h1>
         <div class="form_group">
-            <input type="text" name="ci" placeholder="Cedula"  class="form-control" required autofocus><br>
+            <input type="text" name="email" placeholder="Example@gmail.com"  class="form-control" required autofocus><br>
         </div>
         <div class="form_group">
             <input type="password" name="password" placeholder="Password" class="form-control" required autofocus><br>

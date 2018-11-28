@@ -31,20 +31,45 @@
         }
       }
 
-      public function login($ci, $password)
+      public function login($email, $password)
       {
-        $this->db->where('ci', $ci);
-        $this->db->where('password', $password);
 
-        $result = $this->db->get('user');
+        // $json = pg_query("SELECT usuario_login($email, $password)");
+        try {
+        //  $conn = $this->db->conn_id();
+          // $json = $this->db->call_function('usuario_login', 'admin', 'admin');
+          //
+          // $query = $this->db->query("SELECT usuario_login($email,$password)");
+          // print_r($query->result_id());
+          // print_r($json);
 
-        if ($result->num_rows() == 1 ) {
-            //return $result->row(0)->ci;
-            return true;
+
+
+          // $json_obj = pg_fetch_object($json);
+          // $result = json_decode(json_encode($json_obj));
+          // return json_decode($result->usuario_login);
+
+        } catch (Exception $e) {
+          echo $e->getMessage();
         }
-        else {
-          return false;
-        }
+
+
+
+
+
+
+        // $this->db->where('correo_usuario', $email);
+        // $this->db->where('contrasena_usuario', $password);
+        //
+        // $result = $this->db->get('tbl_usuario');
+        //
+        // if ($result->num_rows() == 1 ) {
+        //     //return $result->row(0)->ci;
+        //     return true;
+        // }
+        // else {
+        //   return false;
+        //}
       }
 
   }

@@ -3,6 +3,7 @@
 
     public function view($page = 'home')
     {
+      try {
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')) {
           show_404();
         }
@@ -11,7 +12,17 @@
         $this->load->view('templates/header');
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
+
+      } catch (Exception $e) {
+
+        echo 'Excepcion caputrada: ', $e->getMessage();
+        redirect('home');
+      }
+
+
     }
+
+
 
   }
 ?>
